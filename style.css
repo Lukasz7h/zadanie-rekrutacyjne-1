@@ -87,7 +87,7 @@ nav ul li:hover i, nav ul li:hover ul li,nav ul li:hover .kinds{
 .kinds{
     position: relative;
     height: 90%;
-    margin-left: 75px;
+    margin-left: 50px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
