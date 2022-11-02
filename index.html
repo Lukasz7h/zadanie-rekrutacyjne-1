@@ -15,22 +15,22 @@
     <div id="container">
         <nav>
             <ul>
-                <li>PSY <i class="fa-solid fa-angle-down"></i>
-                        <div class="animal" data-animal="dogs" style="display: none;">
+                <li class="navList">PSY <i class="fa-solid fa-angle-down"></i>
+                        <div class="animal" style="display: none;">
                             <div class="subjects">
                                 <ul>
-                                    <li>Polecane <i class="fa-solid fa-angle-right"></i>
+                                    <li data-subject="recommended_dogs">Polecane <i class="fa-solid fa-angle-right"></i>
                                     </li>
-                                    <li>Karma dla psów <i class="fa-solid fa-angle-right"></i></li>
-                                    <li>Zabawki dla psów <i class="fa-solid fa-angle-right"></i></li>
-                                    <li>Kosmetyki i pielęgnacja <i class="fa-solid fa-angle-right"></i></li>
-                                    <li>Akcesoria dla psów <i class="fa-solid fa-angle-right"></i></li>
-                                    <li>Na spacer <i class="fa-solid fa-angle-right"></i></li>
-                                    <li>Zdrowie <i class="fa-solid fa-angle-right"></i></li>
-                                    <li>Czystość <i class="fa-solid fa-angle-right"></i></li>
+                                    <li data-subject="dogFood">Karma dla psów <i class="fa-solid fa-angle-right"></i></li>
+                                    <li data-subject="dogToys">Zabawki dla psów <i class="fa-solid fa-angle-right"></i></li>
+                                    <li data-subject="dogCosmetics">Kosmetyki i pielęgnacja <i class="fa-solid fa-angle-right"></i></li>
+                                    <li data-subject="dogAccessories">Akcesoria dla psów <i class="fa-solid fa-angle-right"></i></li>
+                                    <li data-subject="dogStroll">Na spacer <i class="fa-solid fa-angle-right"></i></li>
+                                    <li data-subject="dogHealth">Zdrowie <i class="fa-solid fa-angle-right"></i></li>
+                                    <li data-subject="dogClean">Czystość <i class="fa-solid fa-angle-right"></i></li>
                                 </ul>
                             </div>
-                            <div class="kinds" data="dogFood" style="display: none;">
+                            <div class="kinds" data-subject="dogFood" style="display: none;">
                                 <h3 class="subject_title">KARMA DLA PSÓW</h3>
                                 <ul>
                                     <h4>Karma bytowa dla psów</h4>
@@ -70,14 +70,14 @@
                                 </ul>
                                 <h4>Pokaż wszystkie</h4>
                             </div>
-                            <div class="kinds" data="dogToys" style="display: none;">
+                            <div class="kinds" data-subject="dogToys" style="display: none;">
                                 <h3 class="subject_title">ZABAWKI DLA PSÓW</h3>
                                 <h4>Piłki</h4>
                                 <h4>Gryzaki</h4>
                                 <h4>Frisbee</h4>
                                 <h4>Pozostałe</h4>
                             </div>
-                            <div class="kinds" data="dogCosmetics" style="display: none;">
+                            <div class="kinds" data-subject="dogCosmetics" style="display: none;">
                                 <h3 class="subject_title">KOSMETYK I PIELĘGNACJA</h3>
                                 <h4>Nożyczki, obcinacze</h4>
                                 <h4>Neutralizatory zapachów</h4>
@@ -86,7 +86,7 @@
                                 <h4>Perfumy</h4>
                                 <h4>Szampony, odżywki</h4>
                             </div>
-                            <div class="kinds" data="dogAccessories" style="display: none;">
+                            <div class="kinds" data-subject="dogAccessories" style="display: none;">
                                 <h3 class="subject_title">AKCESORIA DLA PSÓW</h3>
                                 <ul>
                                     <h4>Miski, stojaki, dozowniki</h4>
@@ -119,7 +119,7 @@
                                 <h4>Klatki, kojce</h4>
                                 <h4>Pokaż wszystkie</h4>
                             </div>
-                            <div class="kinds" data="dogStroll" style="display: none;">
+                            <div class="kinds" data-subject="dogStroll" style="display: none;">
                                 <h3 class="subject_title">NA SPACER</h3>
                                 <h4>Kagańce, kolczatki</h4>
                                 <ul>
@@ -136,7 +136,7 @@
                                 <h4>Adresówki dla psa</h4>
                                 <h4>Pokaż wszystkie</h4>
                             </div>
-                            <div class="kinds" data="dogHealth" style="display: none;">
+                            <div class="kinds" data-subject="dogHealth" style="display: none;">
                                 <h3 class="subject_title">ZDROWIE</h3>
                                 <ul>
                                     <h4>Higiena jamy ustnej</h4>
@@ -165,37 +165,37 @@
                                 <h4>Na uspokojenie</h4>
                                 <h4>Pokaż wszystkie</h4>
                             </div>
-                            <div class="kinds" data="dogClean" style="display: none;">
+                            <div class="kinds" data-subject="dogClean" style="display: none;">
                                 <h3 class="subject_title">CZYSTOŚĆ</h3>
                                 <h4>Neutralizatory zapachów</h4>
                                 <h4>Kuwety</h4>
                             </div>
-                            <div class="content" style="display: none;">
-                                <div class="reccomended"></div>
-                                <div class="reccomended"></div>
-                                <div class="reccomended"></div>
-                                <div class="reccomended"></div>
-                                <div class="reccomended"></div>
-                                <div class="reccomended"></div>
+                            <div data-subject="recommended_dogs" class="content">
+                                <div class="recommended"></div>
+                                <div class="recommended"></div>
+                                <div class="recommended"></div>
+                                <div class="recommended"></div>
+                                <div class="recommended"></div>
+                                <div class="recommended"></div>
                             </div>
                         </div>
                 </li>
-                <li>KOTY <i class="fa-solid fa-angle-down"></i>
-                    <div class="animal" data-animal="cats" style="display: none;">
+                <li class="navList">KOTY <i class="fa-solid fa-angle-down"></i>
+                    <div class="animal" style="display: none;">
                         <div class="subjects">
                             <ul>
-                                <li>Polecane <i class="fa-solid fa-angle-right"></i>
+                                <li data-subject="recommended_cats">Polecane <i class="fa-solid fa-angle-right"></i>
                                 </li>
-                                <li>Karma dla kotów <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Zabawki dla kotów <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Kosmetyki i pielęgnacja <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Na spacer <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Akcesoria dla kotów <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Zdrowie <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Czystość <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="catFood">Karma dla kotów <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="catToys">Zabawki dla kotów <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="catCosmetics">Kosmetyki i pielęgnacja <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="catStroll">Na spacer <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="catAccessories">Akcesoria dla kotów <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="catHealth">Zdrowie <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="catClean">Czystość <i class="fa-solid fa-angle-right"></i></li>
                             </ul>
                         </div>
-                        <div class="kinds" data="catFood" style="display: none;">
+                        <div class="kinds" data-subject="catFood" style="display: none;">
                             <h3 class="subject_title">KARMA DLA KOTÓW</h3>
                             <ul>
                                 <h4>Karma bytowa dla kotów</h4>
@@ -243,21 +243,21 @@
                             </ul>
                             <h4>Pokaż wszystkie</h4>
                         </div>
-                        <div class="kinds" data="catToys" style="display: none;">
+                        <div class="kinds" data-subject="catToys" style="display: none;">
                             <h3 class="subject_title">ZABAWKI DLA KOTÓW</h3>
                             <h4>Wędki</h4>
                             <h4>Piłeczki</h4>
                             <h4>Myszki</h4>
                             <h4>Pozostałe</h4>
                         </div>
-                        <div class="kinds" data="catCosmetics" style="display: none;">
+                        <div class="kinds" data-subject="catCosmetics" style="display: none;">
                             <h3 class="subject_title">KOSMETYK I PIELĘGNACJA</h3>
                             <h4>Nożyczki, obcinacze</h4>
                             <h4>Szampony, odżywki</h4>
                             <h4>Szczotki, grzebienie</h4>
                             <h4>Odstraszacze</h4>
                         </div>
-                        <div class="kinds" data="catStroll" style="display: none;">
+                        <div class="kinds" data-subject="catStroll" style="display: none;">
                             <h3 class="subject_title">NA SPACER</h3>
                             <h4>Szelki</h4>
                             <ul>
@@ -270,7 +270,7 @@
                             <h4>Sakiewki na pokarm</h4>
                             <h4>Adresówki dla kota</h4>
                         </div>
-                        <div class="kinds" data="catAccessories" style="display: none;">
+                        <div class="kinds" data-subject="catAccessories" style="display: none;">
                             <h3 class="subject_title">AKCESORIA DLA KOTÓW</h3>
                             <h4>Miski, stojaki, dozowniki</h4>
                             <h4>Szczotki, grzebienie</h4>
@@ -280,7 +280,7 @@
                             <h4>Pozostałe</h4>
                             <h4>Pokaż wszystkie</h4>
                         </div>
-                        <div class="kinds" data="catHealth" style="display: none;">
+                        <div class="kinds" data-subject="catHealth" style="display: none;">
                             <h3 class="subject_title">ZDROWIE</h3>
                             <ul>
                                 <h4>Higiena jamy ustnej</h4>
@@ -308,7 +308,7 @@
                             <h4>Olejki CBD</h4>
                             <h4>Pokaż wszystkie</h4>
                         </div>
-                        <div class="kinds" data="catClean">
+                        <div class="kinds" data-subject="catClean" style="display: none;">
                             <h3 class="subject_title">CZYSTOŚĆ</h3>
                             <ul>
                                 <h4>Żwirki</h4>
@@ -330,7 +330,7 @@
                             <h4>Neutralizatory zapachów</h4>
                             <h4>Nauka czystości</h4>
                         </div>
-                        <div class="content" style="display: none;">
+                        <div data-subject="recommended_cats" class="content">
                             <div class="reccomended"></div>
                             <div class="reccomended"></div>
                             <div class="reccomended"></div>
@@ -340,20 +340,19 @@
                         </div>
                     </div>
                 </li>
-                <li>GRYZONIE <i class="fa-solid fa-angle-down"></i>
-                    <div class="animal" data-animal="rodents"  style="display: none;">
+                <li class="navList">GRYZONIE <i class="fa-solid fa-angle-down"></i>
+                    <div class="animal" style="display: none;">
                         <div class="subjects">
                             <ul>
-                                <li>Polecane <i class="fa-solid fa-angle-right"></i>
-                                </li>
-                                <li>Karma dla gryzoni <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Akcesoria dla gryzoni <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Czystość <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Szelki i smycze <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Zdrowie <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="recommended_rodents">Polecane <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="rodentsFood">Karma dla gryzoni <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="rodentsAccessories">Akcesoria dla gryzoni <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="rodentsClean">Czystość <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="rodentsHarnesses_Leashes">Szelki i smycze <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="rodentsHealth">Zdrowie <i class="fa-solid fa-angle-right"></i></li>
                             </ul>
                         </div>
-                        <div class="kinds" data="rodentsFood" style="display: none;">
+                        <div class="kinds" data-subject="rodentsFood" style="display: none;">
                             <h3 class="subject_title">KARMA DLA GRYZONI</h3>
                             <ul>
                                 <h4>Podstawowa</h4>
@@ -368,14 +367,14 @@
                             <h4>Przysmaki, kolby</h4>
                             <h4>Witaminy</h4>
                         </div>
-                        <div class="kinds" data="rodentsAccessories" style="display: none;">
+                        <div class="kinds" data-subject="rodentsAccessories" style="display: none;">
                             <h3 class="subject_title">AKCESORIA DLA GRYZONI</h3>
                             <h4>Domki, legowska, klatki</h4>
                             <h4>Miski, poidełka</h4>
                             <h4>Tunele, drabinki, kołowrotki</h4>
                             <h4>Transportery</h4>
                         </div>
-                        <div class="kinds" data="rodentsClean" style="display: none;">
+                        <div class="kinds" data-subject="rodentsClean" style="display: none;">
                             <h3 class="subject_title">CZYSTOŚĆ</h3>
                             <h4>Kuwety</h4>
                             <h4>Neutralizatory zapachów</h4>
@@ -383,14 +382,14 @@
                             <h4>Ściólki, żwirki i piaski</h4>
                             <h4>Pielęgnacja</h4>
                         </div>
-                        <div class="kinds" data="rodentsHarnesses_Leashes" style="display: none;">
+                        <div class="kinds" data-subject="rodentsHarnesses_Leashes" style="display: none;">
                             <h3 class="subject_title">SZELKI I SMYCZE</h3>
                         </div>
-                        <div class="kinds" data="rodensHealth"  style="display: none;">
+                        <div class="kinds" data-subject="rodentsHealth" style="display: none;">
                             <h3 class="subject_title">ZDROWIE</h3>
                             <h4>Witaminy</h4>
                         </div>
-                        <div class="content" style="display: none;">
+                        <div data-subject="recommended_rodents" class="content">
                             <div class="reccomended"></div>
                             <div class="reccomended"></div>
                             <div class="reccomended"></div>
@@ -399,20 +398,19 @@
                             <div class="reccomended"></div>
                         </div>
                     </div></li>
-                <li>PTAKI <i class="fa-solid fa-angle-down"></i>
-                    <div class="animal" data-animal="birds" style="display: none;">
-                        <div class="subjects" style="display: none;">
+                <li class="navList">PTAKI <i class="fa-solid fa-angle-down"></i>
+                    <div class="animal" style="display: none;">
+                        <div class="subjects">
                             <ul>
-                                <li>Polecane <i class="fa-solid fa-angle-right"></i>
-                                </li>
-                                <li>Karma dla ptaków <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Akcesoria dla ptaków <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Czystość <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Gołebie <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Witaminy <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="recommended_birds">Polecane <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="birdsFood">Karma dla ptaków <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="birdsAccessories">Akcesoria dla ptaków <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="birdsClean">Czystość <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="birdsPigeons">Gołebie <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="birdsVitamin">Witaminy <i class="fa-solid fa-angle-right"></i></li>
                             </ul>
                         </div>
-                        <div class="kinds" data="birdsFood" style="display: none;">
+                        <div class="kinds" data-subject="birdsFood" style="display: none;">
                             <h3 class="subject_title">KARMA DLA PTAKÓW</h3>
                             <ul>
                                 <h4>Podstawowa</h4>
@@ -426,23 +424,23 @@
                             <h4>Kostki mineralne, wapienka</h4>
                             <h4>Przysmaki, kolby</h4>
                         </div>
-                        <div class="kinds" data="birdsAccessories" style="display: none;">
+                        <div class="kinds" data-subject="birdsAccessories" style="display: none;">
                             <h3 class="subject_title">AKCESORIA DLA PTAKÓW</h3>
                             <h4>Karmidełka, poidełka</h4>
                             <h4>Klatki</h4>
                         </div>
-                        <div class="kinds" data="birdsClean" style="display: none;">
+                        <div class="kinds" data-subject="birdsClean" style="display: none;">
                             <h3 class="subject_title">CZYSTOŚĆ</h3>
                             <h4>Piaski</h4>
                         </div>
-                        <div class="kinds" data="birdsPigeons" style="display: none;">
+                        <div class="kinds" data-subject="birdsPigeons" style="display: none;">
                             <h3 class="subject_title">Karma dla gołębi</h3>
                             <h3 class="subject_title">Witaminy dla gołębi</h3>
                         </div>
-                        <div class="kinds" data="birdsVitamin" style="display: none;">
+                        <div class="kinds" data-subject="birdsVitamin" style="display: none;">
                             <h3 class="subject_title">WITAMINY</h3>
                         </div>
-                        <div class="content" style="display: none;">
+                        <div data-subject="recommended_birds" class="content">
                             <div class="reccomended"></div>
                             <div class="reccomended"></div>
                             <div class="reccomended"></div>
@@ -452,23 +450,22 @@
                         </div>
                     </div>
                 </li>
-                <li>AKWARYSTYKA <i class="fa-solid fa-angle-down"></i>
-                    <div class="animal" data-animal="fishkeeping" style="display: none;">
+                <li class="navList">AKWARYSTYKA <i class="fa-solid fa-angle-down"></i>
+                    <div class="animal" style="display: none;">
                         <div class="subjects">
                             <ul>
-                                <li>Polecane <i class="fa-solid fa-angle-right"></i>
-                                </li>
-                                <li>Pokarm dla rybek <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Akcesoria techniczne <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Preparaty kwarystyczne <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Napowietrzacze, filtry <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Ogrzewanie wody <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Oczko wodne i staw <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Akwaria <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Dekoracje <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="recommended_fishkeeping">Polecane <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="fishFood">Pokarm dla rybek <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="fishkeepingAccessories">Akcesoria techniczne <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="aquariumPreparations">Preparaty kwarystyczne <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="aerators_filters">Napowietrzacze, filtry <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="waterHeating">Ogrzewanie wody <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="pond">Oczko wodne i staw <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="aquariums">Akwaria <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="decor">Dekoracje <i class="fa-solid fa-angle-right"></i></li>
                             </ul>
                         </div>
-                        <div class="kinds" data="fishFood" style="display: none;">
+                        <div class="kinds" data-subject="fishFood" style="display: none;">
                             <h3 class="subject_title">POKARM DLA RYBEK</h3>
                             <h4>Dla ryb dennych</h4>
                             <h4>Dla ryb mięsożernych</h4>
@@ -478,7 +475,7 @@
                             <h4>Dla ryb tropikalnych</h4>
                             <h4>Pokaż wszystkie</h4>
                         </div>
-                        <div class="kinds" data="fishkeepingAccessories" style="display: none;">
+                        <div class="kinds" data-subject="fishkeepingAccessories" style="display: none;">
                             <h3 class="subject_title">AKCESORIA TECHNICZNE</h3>
                             <h4>Czyściki</h4>
                             <h4>Siatki</h4>
@@ -488,7 +485,7 @@
                             <h4>Inne</h4>
                             <h4>Pokaż wszystkie</h4>
                         </div>
-                        <div class="kinds" data="aquariumPreparations" style="display: none;">
+                        <div class="kinds" data-subject="aquariumPreparations" style="display: none;">
                             <h3 class="subject_title">PREPARATY AKWARYSTYCZNE</h3>
                             <h4>Korekta pH i twardość wody</h4>
                             <h4>Uzdatnianie wody</h4>
@@ -501,7 +498,7 @@
                             <h4>Nawozy</h4>
                             <h4>Odżywki</h4>
                         </div>
-                        <div class="kinds" data="aerators_filters" style="display: none;">
+                        <div class="kinds" data-subject="aerators_filters" style="display: none;">
                             <h3 class="subject_title">NAPOWIERZACZE, FILTRY</h3>
                             <h4>Pompy napowietrzające</h4>
                             <h4>Wkłady do filtrów</h4>
@@ -509,11 +506,11 @@
                             <h4>Filtry wewnętrzne</h4>
                             <h4>Sterylizatory</h4>
                         </div>
-                        <div class="kinds" data="waterHeating" style="display: none;">
+                        <div class="kinds" data-subject="waterHeating" style="display: none;">
                             <h3 class="subject_title">OGRZEWANIE WODY</h3>
                             <h4>Grzałki</h4>
                         </div>
-                        <div class="kinds" data="pond" style="display: none;">
+                        <div class="kinds" data-subject="pond" style="display: none;">
                             <h3 class="subject_title">OCZKO WODNE I STAW</h3>
                             <h4>Pokarm</h4>
                             <h4>Pompy</h4>
@@ -522,13 +519,13 @@
                             <h4>Preparaty</h4>
                             <h4>Akcesoria</h4>
                         </div>
-                        <div class="kinds" data="aquariums" style="display: none;">
+                        <div class="kinds" data-subject="aquariums" style="display: none;">
                             <h3 class="subject_title">AKWARIA</h3>
                         </div>
-                        <div class="kinds" data="decor" style="display: none;">
+                        <div class="kinds" data-subject="decor" style="display: none;">
                             <h3 class="subject_title">DEKORACJE</h3>
                         </div>
-                        <div class="content" style="display: none;">
+                        <div data-subject="recommended_fishkeeping" class="content">
                             <div class="reccomended"></div>
                             <div class="reccomended"></div>
                             <div class="reccomended"></div>
@@ -538,21 +535,30 @@
                         </div>
                     </div>
                 </li>
-                <li>GADY I PŁAZY <i class="fa-solid fa-angle-down"></i>
+                <li class="navList">GADY I PŁAZY <i class="fa-solid fa-angle-down"></i>
                     <div class="animal" data-animal="reptiles_amphibians" style="display: none;">
                         <div class="subjects">
                             <ul>
-                                <li>Polecane <i class="fa-solid fa-angle-right"></i>
-                                </li>
-                                <li>Karma dla gadów i płazów <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Wyposażenie terrarium <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Terraria i akcesoria <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Dekoracje <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Ogrzewanie i oświetlenie <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Podłoża <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="recommended_reptiles_amphibians">Polecane <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="reptiles_amphibiansFood">Karma dla gadów i płazów <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="terrariumEquipment">Wyposażenie terrarium <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="terrarium_accessories">Terraria i akcesoria <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="decoration">Dekoracje <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="heating_lighting">Ogrzewanie i oświetlenie <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="substrate">Podłoża <i class="fa-solid fa-angle-right"></i></li>
                             </ul>
                         </div>
-                        <div class="kinds" data="terrariumEquipment" style="display: none;">
+                        <div class="kinds" data-subject="reptiles_amphibiansFood" style="display: none;">
+                            <h3 class="subject_title">KARMA DLA GADÓW I PŁAZÓW</h3>
+                            <h4>Karma dla żółwia</h4>
+                            <h4>Karma dla krabów</h4>
+                            <h4>Karma dla kameleona</h4>
+                            <h4>Karma dla jaszczurki</h4>
+                            <h4>Karma dla żółwi wodnych</h4>
+                            <h4>Karma dla gekona</h4>
+                            <h4>Pokaż wszystkie</h4>
+                        </div>
+                        <div class="kinds" data-subject="terrariumEquipment" style="display: none;">
                             <h3 class="subject_title">WYPOSAŻENIE TERRARIUM</h3>
                             <h4>Kryjówki</h4>
                             <h4>Miski</h4>
@@ -562,18 +568,18 @@
                             <h4>Termostaty i wyłączniki czasowe</h4>
                             <h4>Pokaż wszystkie</h4>
                         </div>
-                        <div class="kinds" data="terrarium_accessories" style="display: none;">
+                        <div class="kinds" data-subject="terrarium_accessories" style="display: none;">
                             <h3 class="subject_title">TERRARIA I AKCESORIA</h3>
                             <h4>Terraria</h4>
                             <h4>Tła do terrarium</h4>
                             <h4>Filtry</h4>
                             <h4>Akcesoria</h4>
                         </div>
-                        <div class="kinds" data="decoration" style="display: none;">
+                        <div class="kinds" data-subject="decoration" style="display: none;">
                             <h3 class="subject_title">DEKORACJE</h3>
                             <h4>Piaski</h4>
                         </div>
-                        <div class="kinds" data="heating_lighting">
+                        <div class="kinds" data-subject="heating_lighting" style="display: none;">
                             <h3 class="subject_title">OGRZEWANIE I OŚWIETLENIE</h3>
                             <h4>Maty grzewcze</h4>
                             <h4>Kamienie grzewcze</h4>
@@ -588,7 +594,7 @@
                             </ul>
                             <h4>Pokaż wszystkie</h4>
                         </div>
-                        <div class="kinds" data="substrate" style="display: none;">
+                        <div class="kinds" data-subject="substrate" style="display: none;">
                             <h3 class="subject_title">PODŁOŻA</h3>
                             <h4>Podłoża piaskowe</h4>
                             <h4>Podłoża torfowe</h4>
@@ -597,7 +603,7 @@
                             <h4>Podłoża kokosowe</h4>
                             <h4>Podłoża mchowe</h4>
                         </div>
-                        <div class="content">
+                        <div data-subject="recommended_reptiles_amphibians" class="content">
                             <div class="reccomended"></div>
                             <div class="reccomended"></div>
                             <div class="reccomended"></div>
@@ -607,21 +613,20 @@
                         </div>
                     </div>
                 </li>
-                <li>KONIE <i class="fa-solid fa-angle-down"></i>
-                    <div class="animal" data-animal="horses"  style="display: none;">
+                <li class="navList">KONIE <i class="fa-solid fa-angle-down"></i>
+                    <div class="animal" style="display: none;">
                         <div class="subjects">
                             <ul>
-                                <li>Polecane <i class="fa-solid fa-angle-right"></i>
-                                </li>
-                                <li>Pasza dla koni <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Smakołyki dla koni <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Witaminy dla koni <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Akcesoria dla koni <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Pielęgnacja koni <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Suplementy dla koni <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="recommended_horses">Polecane <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="forage">Pasza dla koni <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="horsesTastes">Smakołyki dla koni <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="horsesVitamin">Witaminy dla koni <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="horsesAccessories">Akcesoria dla koni <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="horsesTreasure">Pielęgnacja koni <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="horsesSupplements">Suplementy dla koni <i class="fa-solid fa-angle-right"></i></li>
                             </ul>
                         </div>
-                        <div class="kinds" data="forage" style="display: none;">
+                        <div class="kinds" data-subject="forage" style="display: none;">
                             <h3 class="subject_title">PASZA DLA KONI</h3>
                             <h4>Granulaty</h4>
                             <h4>Źrebięta, Hodowla</h4>
@@ -629,13 +634,13 @@
                             <h4>Mesz, Makuch, Otręby</h4>
                             <h4>Objętościowe</h4>
                         </div>
-                        <div class="kinds" data="horsesTastes" style="display: none;">
+                        <div class="kinds" data-subject="horsesTastes" style="display: none;">
                             <h3 class="subject_title">SMAKOŁYKI DLA KONI</h3>
                         </div>
-                        <div class="kinds" data="horsesVitamin" style="display: none;">
+                        <div class="kinds" data-subject="horsesVitamin" style="display: none;">
                             <h3 class="subject_title">WITAMINY DLA KONI</h3>
                         </div>
-                        <div class="kinds" data="horsesAccessories" style="display: none;">
+                        <div class="kinds" data-subject="horsesAccessories" style="display: none;">
                             <h3 class="subject_title">AKCESORIA DLA KONI</h3>
                             <h4>Trociny dla koni</h4>
                             <h4>Sondy żołądkowe</h4>
@@ -643,7 +648,7 @@
                             <h4>Żłoby, wiadra, miski</h4>
                             <h4>Kantary, uwiązy</h4>
                         </div>
-                        <div class="kinds" data="horsesTreasure" style="display: none;">
+                        <div class="kinds" data-subject="horsesTreasure" style="display: none;">
                             <h3 class="subject_title">PIELĘGNACJA KONI</h3>
                             <h4>Maści dla konia</h4>
                             <h4>Szampon dla koni</h4>
@@ -652,7 +657,7 @@
                             <h4>Stomatologia koni</h4>
                             <h4>Szczotki, zgrzebła</h4>
                         </div>
-                        <div class="kinds" data="horsesSupplements" style="display: none;">
+                        <div class="kinds" data-subject="horsesSupplements" style="display: none;">
                             <h3 class="subject_title">SUPLEMENTY DLA KONI</h3>
                             <h4>Kopyta</h4>
                             <h4>Pozostałe (Układ pokarmowy, Odporność itd)</h4>
@@ -662,7 +667,7 @@
                             <h4>Sport (Elektrolity, Wydolność itd)</h4>
                             <h4>Pokaż wszystkie</h4>
                         </div>
-                        <div class="content">
+                        <div data-subject="recommended_horses" class="content">
                             <div class="reccomended"></div>
                             <div class="reccomended"></div>
                             <div class="reccomended"></div>
@@ -673,26 +678,25 @@
                     </div>
                 </li>
                 <li>ZWIERZĘTA GOSPODARSKIE <i class="fa-solid fa-angle-down"></i></li>
-                <li>DOM <i class="fa-solid fa-angle-down"></i>
-                    <div class="animal" data-animal="home">
+                <li class="navList">DOM <i class="fa-solid fa-angle-down"></i>
+                    <div class="animal" style="display: none;">
                         <div class="subjects">
                             <ul>
-                                <li>Polecane <i class="fa-solid fa-angle-right"></i>
-                                </li>
-                                <li>Produkty konopne <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Bros <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="recommended_house">Polecane <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="hempProducts">Produkty konopne <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="bros">Bros <i class="fa-solid fa-angle-right"></i></li>
                                 <li>Podkłady Higieniczny <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Biopon <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="biopon">Biopon <i class="fa-solid fa-angle-right"></i></li>
                                 <li>Ochrona przed komarami, meszkami, kleszczami <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Curver <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="curver">Curver <i class="fa-solid fa-angle-right"></i></li>
                                 <li>Dezynfekcja <i class="fa-solid fa-angle-right"></i></li>
                                 <li>Microbec <i class="fa-solid fa-angle-right"></i></li>
                                 <li>AGD drobne <i class="fa-solid fa-angle-right"></i></li>
                                 <li>Inne <i class="fa-solid fa-angle-right"></i></li>
-                                <li>Fiskars <i class="fa-solid fa-angle-right"></i></li>
+                                <li data-subject="fiskars">Fiskars <i class="fa-solid fa-angle-right"></i></li>
                             </ul>
                         </div>
-                        <div class="kinds" data="hempProducts" style="display: none;">
+                        <div class="kinds" data-subject="hempProducts" style="display: none;">
                             <h3 class="subject_title">PRODUTY KONOPNE</h3>
                             <h4>Olejki CBD dla zwierząt</h4>
                             <h4>Niefiltrowane olejki CBD dla ludzi</h4>
@@ -700,7 +704,7 @@
                             <h4>Susz konopny</h4>
                             <h4>Żywnosć konopna</h4>
                         </div>
-                        <div class="kinds" data="bros" style="display: none;">
+                        <div class="kinds" data-subject="bros" style="display: none;">
                             <h3 class="subject_title">BROS</h3>
                             <h4>Kleszcze</h4>
                             <h4>Muchy</h4>
@@ -710,11 +714,11 @@
                             <h4>Mrówki</h4>
                             <h4>Pokaż wszystkie</h4>
                         </div>
-                        <div class="kinds" data="biopon" style="display: none;">
+                        <div class="kinds" data-subject="biopon" style="display: none;">
                             <h3 class="subject_title">BIOPON</h3>
                             <h4>Środki do pielęgnacji</h4>
                         </div>
-                        <div class="kinds" data="curver">
+                        <div class="kinds" data-subject="curver" style="display: none;">
                             <h3 class="subject_title">CURVER</h3>
                             <ul>
                                 <h4>Stylowy dom</h4>
@@ -726,12 +730,12 @@
                             <h4>Ogórd</h4>
                             <h4>Warsztat</h4>
                         </div>
-                        <div class="kinds" data="fiskars" style="display: none;">
+                        <div class="kinds" data-subject="fiskars" style="display: none;">
                             <h3 class="subject_title">FISKARS</h3>
                             <h4>Fiskars Kuchnia</h4>
                             <h4>Fiskars Ogród</h4>
                         </div>
-                        <div class="content" id="reccomended_box">
+                        <div data-subject="recommended_house" class="content">
                             <div class="reccomended"></div>
                             <div class="reccomended"></div>
                             <div class="reccomended"></div>
@@ -745,4 +749,5 @@
         </nav>
     </div>
 </body>
+<script type="module" src="main.js"></script>
 </html>
