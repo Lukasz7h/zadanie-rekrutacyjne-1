@@ -1,3 +1,4 @@
+import { listenRecommendedElement } from "./recommendedElement.js";
 import { Subjects } from "./screenForSubject.js";
 
 const subjects = new Subjects();
@@ -38,7 +39,6 @@ const instance = new CurrentElement();
 
 export function removeCurrentElement()
 {
-    instance.remove();
 }
 
 export function action(element)
@@ -48,6 +48,12 @@ export function action(element)
     if(element instanceof HTMLLIElement) data = element;
     else if(element.parentElement instanceof HTMLLIElement) data = element.parentElement;
 
-    if(data) instance.check(data);
-    if(element instanceof HTMLBodyElement) instance.remove();
+    if(data) {
+
+        const recommendedBox = data.getElementsByClassName("content").item(0);
+
+        if(!!recommendedBox && instance.currentElement != data) listenRecommendedElement(recommendedBox);
+        instance.check(data);
+    }
+    //if(element instanceof HTMLBodyElement) instance.remove();
 }

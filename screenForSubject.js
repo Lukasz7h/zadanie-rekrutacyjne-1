@@ -39,7 +39,10 @@ export function Subjects()
         {
             if(this.currentLiElement != this.objSubjects[`${dataSubject}`].liElement)
             {
-                if(this.currentLiElement != undefined) this.objSubjects[`${this.currentLiElement.getAttribute("data-subject")}`].divElement.style.display = "none";
+                if(
+                    this.currentLiElement != undefined
+                    && !this.objSubjects[`${this.currentLiElement.getAttribute("data-subject")}`].divElement.classList.contains("content")
+                ) this.objSubjects[`${this.currentLiElement.getAttribute("data-subject")}`].divElement.style.display = "none";
                 this.currentLiElement = this.objSubjects[`${dataSubject}`].liElement;
             };
 
