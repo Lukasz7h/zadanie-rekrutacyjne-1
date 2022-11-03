@@ -34,16 +34,33 @@ let amountOfActionLeft = 0;
                 else{
                     amountOfActionRight = amountOfBoxes / (i-1);
 
-                    document.getElementsByClassName("fa-chevron-right").item(0)
-                    .addEventListener("click", (e) => {
+                    const rightArrow = document.getElementsByClassName("fa-chevron-right").item(0);
+                    const leftArrow = document.getElementsByClassName("fa-chevron-left").item(0);
+
+                    const amountOfViewElements = amountOfBoxes / amountOfActionRight;
+
+                    let copy = 0;
+                    const arr = [];
+
+                    for(let y=1; y<=amountOfBoxes; y++)
+                    {
+                        copy++;
+                        if(copy == amountOfViewElements) {
+                            arr.push([boxes[y-2], boxes[y-1]]);
+                            copy = 0;
+                        };
+                    };
+
+                    console.log(arr);
+
+                    rightArrow.addEventListener("click", (e) => {
                         if(amountOfActionRight)
                         {
                             
                         };
                     });
 
-                    document.getElementsByClassName("fa-chevron-left").item(0)
-                    .addEventListener("click", (e) => {
+                    leftArrow.addEventListener("click", (e) => {
 
                     });
 
