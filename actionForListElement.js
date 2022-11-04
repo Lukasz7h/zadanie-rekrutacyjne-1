@@ -1,4 +1,4 @@
-import { listenRecommendedElement } from "./recommendedElement.js";
+import { domesticData, listenRecommendedElement } from "./recommendedElement.js";
 import { Subjects } from "./screenForSubject.js";
 
 const subjects = new Subjects();
@@ -25,7 +25,9 @@ function CurrentElement()
             {
                 this.remove();
                 this.currentElement = element;
+
                 this.currentElement.lastElementChild.style.display = "flex";
+                domesticData.flag = true;
             };
         }
         else

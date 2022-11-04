@@ -37,19 +37,21 @@ export function Subjects()
     this.findListElement = function (element)
     {
         const dataSubject = element.getAttribute("data-subject");
+
         if(this.objSubjects[`${dataSubject}`])
         {
-            if(this.currentLiElement != this.objSubjects[`${dataSubject}`].liElement)
+            let newElement = this.objSubjects[`${dataSubject}`].liElement;
+            if(
+                newElement != this.currentLiElement
+            ) 
             {
-                if(
-                    this.currentLiElement != undefined
-                    && !this.objSubjects[`${this.currentLiElement.getAttribute("data-subject")}`].divElement.classList.contains("content")
-                ) this.objSubjects[`${this.currentLiElement.getAttribute("data-subject")}`].divElement.style.display = "none";
-                {
-                    this.currentLiElement = this.objSubjects[`${dataSubject}`].liElement;
-                    domesticData.amountOfActionLeft = 0;
-                    domesticData.amountOfActionRight = undefined;
-                };
+                if(this.currentLiElement 
+                &&
+                !this.objSubjects[`${this.currentLiElement.getAttribute("data-subject")}`].divElement.classList.contains("content")) this.objSubjects[`${this.currentLiElement.getAttribute("data-subject")}`].divElement.style.display = "none";
+                this.currentLiElement = this.objSubjects[`${dataSubject}`].liElement;
+
+                domesticData.amountOfActionLeft = 0;
+                domesticData.amountOfActionRight = undefined;
             };
 
             this.objSubjects[`${dataSubject}`].divElement.style.display = "flex";

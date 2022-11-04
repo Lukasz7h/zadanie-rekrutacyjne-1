@@ -9,17 +9,18 @@ let resizeObserver;
 
 export const domesticData = {
     amountOfActionRight: undefined,
-    amountOfActionLeft: 0
+    amountOfActionLeft: 0,
+    
+    rightArrow: undefined,
+    leftArrow: undefined,
+
+    flag: false
 }
 
 const arr = [];
-
 let updateBoxSize;
 
     function createObserv (element){
-
-        let rightArrow;
-        let leftArrow;
 
         const boxes = [...element.getElementsByClassName("box")];
         boxes.forEach((e) => {
@@ -32,42 +33,57 @@ let updateBoxSize;
             
             function listener()
             {
-                rightArrow.addEventListener("click", (e) => {
-                    if(domesticData.amountOfActionRight && domesticData.amountOfActionRight != 1)
-                    {
+                domesticData.leftArrow = element.getElementsByClassName("fa-chevron-left").item(0);
+                domesticData.rightArrow = element.getElementsByClassName("fa-chevron-right").item(0);
 
-                        arr.reverse()[domesticData.amountOfActionRight-1].forEach((e) => {
+                function clicked(e, boolean)
+                {
+                    boolean?
+                    (function(){
+                        if(domesticData.amountOfActionRight && domesticData.amountOfActionRight != 1)
+                        {
+                            arr.reverse()[domesticData.amountOfActionRight-1].forEach((e) => {
+    
+                                e.style.flexBasis = '0px';
+                                e.style.margin = '0px 0px';
+    
+                                e.getElementsByClassName("recommended")
+                                .item(0).style.display = "none";
+                            });
+                            arr.reverse();
+    
+                            domesticData.amountOfActionRight--;
+                            domesticData.amountOfActionLeft++;
+    
+                            updateBoxSize = boxes[boxes.length - 1].clientWidth;
+                        };
+                    })():
+                    (function() {
+                        if(domesticData.amountOfActionLeft)
+                        {
+                            arr[domesticData.amountOfActionLeft-1].forEach((e) => {
+                                e.style.flexBasis =`${updateBoxSize}px`;
+                                e.style.margin = '0px 16px';
+    
+                                e.getElementsByClassName("recommended")
+                                .item(0).style.display = "block";
+                            });
+    
+                            domesticData.amountOfActionLeft--;
+                            domesticData.amountOfActionRight++;
+                        };
+                    })();
+                }
+                
+                const hasAttribute = domesticData.leftArrow.getAttribute("data-listener");
+                if(!hasAttribute)
+                {
+                    domesticData.leftArrow.setAttribute("data-listener", true);
+                    domesticData.rightArrow.setAttribute("data-listener", true);
 
-                            e.style.flexBasis = '0px';
-                            e.style.margin = '0px 0px';
-
-                            e.getElementsByClassName("recommended")
-                            .item(0).style.display = "none";
-                        });
-                        arr.reverse();
-
-                        domesticData.amountOfActionRight--;
-                        domesticData.amountOfActionLeft++;
-
-                        updateBoxSize = boxes[boxes.length - 1].clientWidth;
-                    };
-                });
-
-                leftArrow.addEventListener("click", (e) => {
-                    if(domesticData.amountOfActionLeft)
-                    {
-                        arr[domesticData.amountOfActionLeft-1].forEach((e) => {
-                            e.style.flexBasis =`${updateBoxSize}px`;
-                            e.style.margin = '0px 16px';
-
-                            e.getElementsByClassName("recommended")
-                            .item(0).style.display = "block";
-                        });
-
-                        domesticData.amountOfActionLeft--;
-                        domesticData.amountOfActionRight++;
-                    };
-                });
+                    domesticData.leftArrow.addEventListener("click", (e) => clicked(e, false));
+                    domesticData.rightArrow.addEventListener("click", (e) => clicked(e, true));
+                };
             };
 
             arr.splice(0, arr.length);
@@ -81,24 +97,20 @@ let updateBoxSize;
                     {
                         for(let z=0; z<amountOfBoxes; z++)
                         {
-
                             boxes[z].style.display = `flex`;
                             boxes[z].style.margin = `0px 16px`;
+
                             boxes[z].style.flexBasis = `${long - 32}px`;
+                            boxes[z].getElementsByClassName("recommended")
+                            .item(0).style.display = "block";
                         }
                     }
                     continue;
                 }
                 else{
-                    if(!domesticData.amountOfActionRight) domesticData.amountOfActionRight = amountOfBoxes / (i-1);
 
-                    if(!rightArrow && !leftArrow)
-                    {
-                        rightArrow = element.getElementsByClassName("fa-chevron-right").item(0);
-                        leftArrow = element.getElementsByClassName("fa-chevron-left").item(0);
-
-                        listener();
-                    };
+                    domesticData.amountOfActionRight = amountOfBoxes / (i-1);
+                    listener();
 
                     const amountOfViewElements = amountOfBoxes / domesticData.amountOfActionRight;
                     let copy = 0;
@@ -114,6 +126,7 @@ let updateBoxSize;
                             {
                                 arrayWithElements.push(boxes[y-m]);
                             };
+
                             arr.push(arrayWithElements);
                             copy = 0;
                         };
@@ -131,7 +144,8 @@ let updateBoxSize;
                     break;
                 };
             };
-            console.log(arr)
+
+            currentElement = element;
         });
 
         resizeObserver.observe(element);
