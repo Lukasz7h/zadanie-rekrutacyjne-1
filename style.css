@@ -94,6 +94,7 @@ nav ul li:hover i, nav ul li:hover ul li,nav ul li:hover .kinds{
     margin: 0 auto;
     overflow: hidden;
     position: relative;
+    flex-basis: 15%;
 }
 
 .kinds{

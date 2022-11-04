@@ -1,3 +1,5 @@
+import { domesticData } from "./recommendedElement.js";
+
 export function Subjects()
 {
     this.allSubjects = document.querySelectorAll("[data-subject]");
@@ -43,7 +45,11 @@ export function Subjects()
                     this.currentLiElement != undefined
                     && !this.objSubjects[`${this.currentLiElement.getAttribute("data-subject")}`].divElement.classList.contains("content")
                 ) this.objSubjects[`${this.currentLiElement.getAttribute("data-subject")}`].divElement.style.display = "none";
-                this.currentLiElement = this.objSubjects[`${dataSubject}`].liElement;
+                {
+                    this.currentLiElement = this.objSubjects[`${dataSubject}`].liElement;
+                    domesticData.amountOfActionLeft = 0;
+                    domesticData.amountOfActionRight = undefined;
+                };
             };
 
             this.objSubjects[`${dataSubject}`].divElement.style.display = "flex";
