@@ -50,8 +50,12 @@ export function Subjects()
                 !this.objSubjects[`${this.currentLiElement.getAttribute("data-subject")}`].divElement.classList.contains("content")) this.objSubjects[`${this.currentLiElement.getAttribute("data-subject")}`].divElement.style.display = "none";
                 this.currentLiElement = this.objSubjects[`${dataSubject}`].liElement;
 
-                domesticData.amountOfActionLeft = 0;
-                domesticData.amountOfActionRight = undefined;
+                if(domesticData.flag)
+                {
+                    domesticData.amountOfActionLeft = 0;
+                    domesticData.amountOfActionRight = undefined;
+                };
+                
             };
 
             this.objSubjects[`${dataSubject}`].divElement.style.display = "flex";

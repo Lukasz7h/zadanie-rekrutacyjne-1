@@ -29,6 +29,7 @@ let updateBoxSize;
 
         resizeObserver = new ResizeObserver((entries) => {
 
+            domesticData.flag = true;
             const recommendedBoxWidth = entries[0].contentRect.width;
             
             function listener()
@@ -36,8 +37,13 @@ let updateBoxSize;
                 domesticData.leftArrow = element.getElementsByClassName("fa-chevron-left").item(0);
                 domesticData.rightArrow = element.getElementsByClassName("fa-chevron-right").item(0);
 
+                domesticData.leftArrow.style.opacity = "0.5";
+
                 function clicked(e, boolean)
                 {
+                    console.log(domesticData.amountOfActionRight);
+                    console.log(domesticData.amountOfActionLeft);
+                    
                     boolean?
                     (function(){
                         if(domesticData.amountOfActionRight && domesticData.amountOfActionRight != 1)
@@ -56,6 +62,8 @@ let updateBoxSize;
                             domesticData.amountOfActionLeft++;
     
                             updateBoxSize = boxes[boxes.length - 1].clientWidth;
+
+                            if(domesticData.amountOfActionLeft > 0) domesticData.leftArrow.style.opacity = "1";
                         };
                     })():
                     (function() {
@@ -71,6 +79,11 @@ let updateBoxSize;
     
                             domesticData.amountOfActionLeft--;
                             domesticData.amountOfActionRight++;
+
+                            if(domesticData.amountOfActionLeft == 0)
+                            {
+                                domesticData.leftArrow.style.opacity = "0.5";
+                            }
                         };
                     })();
                 }
@@ -110,7 +123,10 @@ let updateBoxSize;
                 else{
 
                     domesticData.amountOfActionRight = amountOfBoxes / (i-1);
+                    domesticData.amountOfActionLeft = 0;
                     listener();
+
+                    console.log(domesticData.amountOfActionRight);
 
                     const amountOfViewElements = amountOfBoxes / domesticData.amountOfActionRight;
                     let copy = 0;
@@ -146,6 +162,7 @@ let updateBoxSize;
             };
 
             currentElement = element;
+            domesticData.flag = false;
         });
 
         resizeObserver.observe(element);

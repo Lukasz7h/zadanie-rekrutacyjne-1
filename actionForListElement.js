@@ -27,7 +27,6 @@ function CurrentElement()
                 this.currentElement = element;
 
                 this.currentElement.lastElementChild.style.display = "flex";
-                domesticData.flag = true;
             };
         }
         else
