@@ -14,6 +14,7 @@ export const domesticData = {
     rightArrow: undefined,
     leftArrow: undefined,
 
+    amountOfViewElements: undefined,
     flag: false
 }
 
@@ -41,8 +42,6 @@ let updateBoxSize;
 
                 function clicked(e, boolean)
                 {
-                    console.log(domesticData.amountOfActionRight);
-                    console.log(domesticData.amountOfActionLeft);
                     
                     boolean?
                     (function(){
@@ -108,6 +107,12 @@ let updateBoxSize;
     
                     if(i==6)
                     {
+                        domesticData.leftArrow = element.getElementsByClassName("fa-chevron-left").item(0);
+                        domesticData.rightArrow = element.getElementsByClassName("fa-chevron-right").item(0);
+
+                        domesticData.leftArrow.style.display = "none";
+                        domesticData.rightArrow.style.display = "none";
+
                         for(let z=0; z<amountOfBoxes; z++)
                         {
                             boxes[z].style.display = `flex`;
@@ -126,19 +131,17 @@ let updateBoxSize;
                     domesticData.amountOfActionLeft = 0;
                     listener();
 
-                    console.log(domesticData.amountOfActionRight);
-
-                    const amountOfViewElements = amountOfBoxes / domesticData.amountOfActionRight;
+                    domesticData.amountOfViewElements = amountOfBoxes / domesticData.amountOfActionRight;
                     let copy = 0;
 
                     for(let y=1; y<=amountOfBoxes; y++)
                     {
                         copy++;
 
-                        if(copy == amountOfViewElements) {
+                        if(copy == domesticData.amountOfViewElements) {
                             
                             const arrayWithElements = [];
-                            for(let m=1; m<=amountOfViewElements; m++)
+                            for(let m=1; m<=domesticData.amountOfViewElements; m++)
                             {
                                 arrayWithElements.push(boxes[y-m]);
                             };
@@ -157,9 +160,15 @@ let updateBoxSize;
                         boxes[z].getElementsByClassName("recommended")
                         .item(0).style.display = "block";
                     };
+
+                    domesticData.leftArrow.style.display = "block";
+                    domesticData.rightArrow.style.display = "block";
+
                     break;
                 };
             };
+
+            console.log(arr)
 
             currentElement = element;
             domesticData.flag = false;
