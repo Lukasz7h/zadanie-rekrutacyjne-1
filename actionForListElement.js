@@ -1,4 +1,4 @@
-import { domesticData, listenRecommendedElement } from "./recommendedElement.js";
+import { listenRecommendedElement } from "./recommendedElement.js";
 import { Subjects } from "./screenForSubject.js";
 
 const subjects = new Subjects();
@@ -7,11 +7,13 @@ function CurrentElement()
 {
     this.currentElement;
 
+    // usuwamy ostatnio aktualny element
     this.remove = function()
     {
         if(this.currentElement != undefined) this.currentElement.lastElementChild.style.display = "none";
     }
 
+    // sprawdzamy czy zmienił się wyświetlony
     this.check = function(element)
     {
         if(element.hasAttribute("data-subject")){
@@ -33,14 +35,10 @@ function CurrentElement()
         {
             this.currentElement.lastElementChild.style.display = "flex";
         };
-    };
+    }
 }
 
 const instance = new CurrentElement();
-
-export function removeCurrentElement()
-{
-}
 
 export function action(element)
 {
@@ -49,12 +47,14 @@ export function action(element)
     if(element instanceof HTMLLIElement) data = element;
     else if(element.parentElement instanceof HTMLLIElement) data = element.parentElement;
 
-    if(data) {
+    if(data){
 
         const recommendedBox = data.getElementsByClassName("content").item(0);
 
         if(!!recommendedBox && instance.currentElement != data) listenRecommendedElement(recommendedBox);
         instance.check(data);
-    }
-    //if(element instanceof HTMLBodyElement) instance.remove();
+    };
+
+    // jeśli opścimy element nav usuwamy obiekt z kontentem
+    if(element instanceof HTMLBodyElement) instance.remove();
 }

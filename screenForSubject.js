@@ -7,9 +7,9 @@ export function Subjects()
 
     this.currentLiElement;
 
+    // sortujemy elementy po temacie (elementy li i div)
     this.sortSubjects = function()
     {
-
         let divElements = [];
 
         this.allSubjects.forEach((element, id) => {
@@ -47,7 +47,8 @@ export function Subjects()
             {
                 if(this.currentLiElement 
                 &&
-                !this.objSubjects[`${this.currentLiElement.getAttribute("data-subject")}`].divElement.classList.contains("content")) this.objSubjects[`${this.currentLiElement.getAttribute("data-subject")}`].divElement.style.display = "none";
+                !this.objSubjects[`${this.currentLiElement.getAttribute("data-subject")}`].divElement.classList.contains("content")
+                ) this.objSubjects[`${this.currentLiElement.getAttribute("data-subject")}`].divElement.style.display = "none";
                 this.currentLiElement = this.objSubjects[`${dataSubject}`].liElement;
 
                 if(domesticData.flag)

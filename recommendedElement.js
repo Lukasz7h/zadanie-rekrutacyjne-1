@@ -40,6 +40,7 @@ let updateBoxSize;
 
                 domesticData.leftArrow.style.opacity = "0.5";
 
+                // po kliknięciu w jedną strzałek uruchamiamy jedną z funkcji
                 function clicked(e, boolean)
                 {
                     
@@ -88,6 +89,8 @@ let updateBoxSize;
                 }
                 
                 const hasAttribute = domesticData.leftArrow.getAttribute("data-listener");
+
+                // jeśli nie istnieje atrybut data-listener to dodajemy addEventListener do elementów (strzałek)
                 if(!hasAttribute)
                 {
                     domesticData.leftArrow.setAttribute("data-listener", true);
@@ -100,12 +103,14 @@ let updateBoxSize;
 
             arr.splice(0, arr.length);
     
+            // przechodzimy po wszystkich elementach
             for(let i=1; i<=amountOfBoxes; i++)
             {
                 if(recommendedBoxWidth > i*boxWidth){
                     var long = Math.floor( recommendedBoxWidth / i);
     
-                    if(i==6)
+                    // jesteśmy na ostatnim wyświetlanym elemencie
+                    if(i==amountOfBoxes)
                     {
                         domesticData.leftArrow = element.getElementsByClassName("fa-chevron-left").item(0);
                         domesticData.rightArrow = element.getElementsByClassName("fa-chevron-right").item(0);
@@ -113,6 +118,7 @@ let updateBoxSize;
                         domesticData.leftArrow.style.display = "none";
                         domesticData.rightArrow.style.display = "none";
 
+                        // ustawianie stylów dla elementów
                         for(let z=0; z<amountOfBoxes; z++)
                         {
                             boxes[z].style.display = `flex`;
@@ -138,6 +144,7 @@ let updateBoxSize;
                     {
                         copy++;
 
+                        // dzielimy elementy na grupy które będziemy wyświetlać (będą wyświetlać sie po kliknięciu w strzałke)
                         if(copy == domesticData.amountOfViewElements) {
                             
                             const arrayWithElements = [];
@@ -151,6 +158,8 @@ let updateBoxSize;
                         };
                     };
 
+
+                    // zmienianie stylów dle elementów rekomendowanych
                     for(let z=0; z<amountOfBoxes; z++)
                     {
                         boxes[z].style.display = `flex`;
@@ -167,8 +176,6 @@ let updateBoxSize;
                     break;
                 };
             };
-
-            console.log(arr)
 
             currentElement = element;
             domesticData.flag = false;
