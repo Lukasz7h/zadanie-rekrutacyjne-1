@@ -47,7 +47,7 @@ nav>ul>li:hover{
     color: rgb(49, 196, 147);
 }
 
-nav ul li:hover i, nav ul li:hover ul li,nav ul li:hover .kinds{
+nav ul li:hover i, nav ul li:hover ul li,nav ul li:hover .kinds, nav ul li:hover .content{
     color: black;
 }
 
@@ -91,6 +91,7 @@ nav ul li:hover i, nav ul li:hover ul li,nav ul li:hover .kinds{
     cursor: default;
     flex-wrap: nowrap;
     flex-grow: 1;
+    padding-top: 45px;
     margin: 0 auto;
     overflow: hidden;
     position: relative;
